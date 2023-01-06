@@ -12,8 +12,14 @@ class NewBox extends Component {
             [evt.target.name]: evt.target.value
         });
     };
-    handleSubmit() {
-
+    handleSubmit(evt) {
+        evt.preventDefault();
+        this.props.createBox(this.state);
+        this.setState({
+            height: "", 
+            width: "", 
+            color:""
+        });
     };
 
     render () {
